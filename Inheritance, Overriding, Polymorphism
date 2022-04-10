@@ -1,0 +1,99 @@
+--Inheritance--
+class Super_class {
+   int num = 20;
+
+   // display method of superclass
+   public void display() {
+      System.out.println("This is the display method of superclass");
+   }
+}
+
+public class Sub_class extends Super_class {
+   int num = 10;
+
+   // display method of sub class
+   public void display() {
+      System.out.println("This is the display method of subclass");
+   }
+
+   public void my_method() {
+      // Instantiating subclass
+      Sub_class sub = new Sub_class();
+
+      // Invoking the display() method of sub class
+      sub.display();
+
+      // Invoking the display() method of superclass
+      super.display();
+
+      // printing the value of variable num of subclass
+      System.out.println("value of the variable named num in sub class:"+ sub.num);
+
+      // printing the value of variable num of superclass
+      System.out.println("value of the variable named num in super class:"+ super.num);
+   }
+
+   public static void main(String args[]) {
+      Sub_class obj = new Sub_class();
+      obj.my_method();
+   }
+}
+
+
+
+
+
+--Overriding--
+package pertemuan1_1;
+
+public class PERTEMUAN1_1 {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.println("Nama    :Fatur Rahman");
+        System.out.println("NIM     :125415");
+        System.out.println("Alamat  :cakung timur jakarta timur");
+        System.out.println("No.Telp :0878xxxxxxx");
+        System.out.println("Email   :elfatur989@gmail.com");
+    }
+}
+
+
+
+
+
+
+--Polymorphism--
+public class Polimorphism {
+ 
+   public static void main(String[ ] args) {
+ 
+      cetakObyek(new Balok());
+      cetakObyek(new PersegiPanjang());
+      cetakObyek(new BangunDatar());
+      cetakObyek(new Object());
+   }
+    
+   public static void cetakObyek(Object obyek) {
+      System.out.println(obyek);
+   }
+ 
+} // Akhir kelas Polimorphism
+ 
+class Balok extends PersegiPanjang {
+   public String toString() {
+      return "Mempunyai sisi panjang, lebar dan tinggi";
+   }
+}
+ 
+class PersegiPanjang extends BangunDatar {
+   public String toString() {
+      return "Mempunyai sisi panjang dan lebar";
+   }
+}
+ 
+class BangunDatar extends Object {
+   public String toString() {
+      return "Mempunyai berbagai bentuk";
+   }
+}
